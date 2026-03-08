@@ -1,0 +1,2254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GHOST PROTOCOL — Cypher Club Newsletter | MMCOE</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=Bangers&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=VT323&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --neon: #00ff88;
+    --neon2: #00cfff;
+    --red: #ff2244;
+    --yellow: #ffe000;
+    --dark: #050a0e;
+    --dark2: #0a1520;
+    --dark3: #0d1f2d;
+    --panel: #0f2537;
+    --white: #e8f4f8;
+    --border: #00ff8830;
+    --comic-yellow: #ffd700;
+    --comic-red: #ff4136;
+    --comic-blue: #0074D9;
+  }
+
+  @keyframes contactPulse {
+    0%, 100% { border-color: #00ff8830; box-shadow: none; }
+    50% { border-color: #00ff8880; box-shadow: 0 0 25px #00ff8825; }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #111;
+    font-family: 'Rajdhani', sans-serif;
+    color: var(--white);
+  }
+
+  /* PAGE WRAPPER */
+  .page {
+    max-width: 794px;
+    width: 100%;
+    min-height: auto;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+  }
+
+  /* ============================
+     PAGE 1 — COVER
+  ============================ */
+  .cover {
+    background: var(--dark);
+    border: 3px solid var(--neon);
+    box-shadow: 0 0 60px #00ff8840, inset 0 0 80px #00102080;
+  }
+
+  .cover-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(0,255,136,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,136,0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: gridMove 8s linear infinite;
+  }
+
+  @keyframes gridMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 40px 40px; }
+  }
+
+  .cover-scan {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--neon), transparent);
+    animation: scan 4s linear infinite;
+  }
+  @keyframes scan {
+    0% { top: 0; opacity: 1; }
+    100% { top: 100%; opacity: 0.3; }
+  }
+
+  .cover-content {
+    position: relative; z-index: 2;
+    padding: 40px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 1123px;
+  }
+
+  .cover-header-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #00ff8830;
+    padding-bottom: 12px;
+    margin-bottom: 30px;
+  }
+
+  .cover-tag {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: var(--neon);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .mmcoe-badge {
+    background: linear-gradient(135deg, #001a30, #002a50);
+    border: 1px solid var(--neon2);
+    padding: 6px 16px;
+    border-radius: 3px;
+    font-family: 'Orbitron', monospace;
+    font-size: 10px;
+    color: var(--neon2);
+    letter-spacing: 2px;
+  }
+
+  .cover-skull {
+    font-size: 120px;
+    line-height: 1;
+    margin: 20px 0 10px;
+    filter: drop-shadow(0 0 30px #00ff88);
+    animation: pulse 3s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%,100% { filter: drop-shadow(0 0 20px #00ff88); }
+    50% { filter: drop-shadow(0 0 50px #00ff88) drop-shadow(0 0 80px #00cfff); }
+  }
+
+  .cover-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 64px;
+    font-weight: 900;
+    color: var(--neon);
+    text-shadow: 0 0 20px #00ff88, 0 0 60px #00ff8880;
+    letter-spacing: 8px;
+    text-align: center;
+    line-height: 1;
+  }
+
+  .cover-subtitle {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 14px;
+    color: var(--neon2);
+    letter-spacing: 6px;
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .cover-divider {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--neon), var(--neon2), transparent);
+    margin: 20px 0;
+    box-shadow: 0 0 10px var(--neon);
+  }
+
+  .cover-issue-box {
+    display: flex;
+    gap: 30px;
+    margin: 20px 0;
+  }
+  .cover-issue-item {
+    text-align: center;
+    border: 1px solid #00ff8840;
+    padding: 10px 20px;
+    background: #00ff880a;
+  }
+  .cover-issue-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    color: #00ff8880;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: block;
+  }
+  .cover-issue-value {
+    font-family: 'Orbitron', monospace;
+    font-size: 14px;
+    color: var(--neon);
+    font-weight: 700;
+  }
+
+  .cover-main-headline {
+    font-family: 'Bangers', cursive;
+    font-size: 42px;
+    color: var(--yellow);
+    text-align: center;
+    letter-spacing: 3px;
+    margin: 10px 0 5px;
+    text-shadow: 3px 3px 0 #000, 0 0 30px #ffe00060;
+  }
+
+  .cover-teasers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    width: 100%;
+    margin: 20px 0;
+  }
+  .cover-teaser {
+    border: 1px solid #00ff8820;
+    background: #00ff880a;
+    padding: 15px;
+    position: relative;
+  }
+  .cover-teaser::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--neon);
+  }
+  .cover-teaser-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 10px;
+    color: var(--neon);
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+  .cover-teaser-text {
+    font-size: 12px;
+    color: #a0c0d0;
+    line-height: 1.4;
+  }
+  .cover-teaser-pg {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: var(--neon2);
+    margin-top: 6px;
+  }
+
+  .cover-comic-strip {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+  }
+  .mini-panel {
+    flex: 1;
+    border: 3px solid #000;
+    background: #fff;
+    color: #000;
+    border-radius: 4px;
+    overflow: hidden;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bangers', cursive;
+  }
+  .mini-panel-bg1 { background: linear-gradient(135deg, #ffe566, #ffd700); }
+  .mini-panel-bg2 { background: linear-gradient(135deg, #a8e6cf, #56ab91); }
+  .mini-panel-bg3 { background: linear-gradient(135deg, #ffb3ba, #ff6b8a); }
+  .mini-panel-bg4 { background: linear-gradient(135deg, #b3d9ff, #4a90d9); }
+
+  .mini-panel .emoji { font-size: 40px; }
+  .mini-panel .caption {
+    font-size: 12px;
+    text-align: center;
+    padding: 5px 8px;
+    line-height: 1.2;
+    font-family: 'Bangers', cursive;
+    letter-spacing: 1px;
+  }
+
+  .cover-footer {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #00ff8830;
+    padding-top: 15px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: #00ff8860;
+  }
+
+  .binary-bg {
+    position: absolute;
+    font-family: 'VT323', monospace;
+    font-size: 14px;
+    color: #00ff8808;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    line-height: 1.6;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* ============================
+     PAGE 2 — CYBER NEWS
+  ============================ */
+  .news-page {
+    background: var(--dark2);
+    border: 3px solid var(--neon);
+  }
+
+  .page-header {
+    background: linear-gradient(135deg, #001520, #002a40);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--neon);
+  }
+  .page-header-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 11px;
+    color: var(--neon);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+  .page-num {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    color: var(--neon2);
+  }
+
+  .news-content { padding: 30px 40px; }
+
+  .section-title {
+    font-family: 'Bangers', cursive;
+    font-size: 48px;
+    color: var(--red);
+    letter-spacing: 3px;
+    text-shadow: 3px 3px 0 #000, 0 0 20px #ff224460;
+    margin-bottom: 5px;
+  }
+  .section-subtitle {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: var(--neon2);
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+  }
+
+  .news-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 20px;
+  }
+
+  .news-card {
+    background: #0a1825;
+    border: 1px solid #00ff8825;
+    padding: 18px;
+    position: relative;
+    overflow: hidden;
+  }
+  .news-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--neon), var(--neon2));
+  }
+
+  .news-card-tag {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    font-family: 'Orbitron', monospace;
+    font-size: 8px;
+    padding: 3px 8px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  .news-card-tag.blue { background: var(--neon2); color: #000; }
+  .news-card-tag.green { background: var(--neon); color: #000; }
+  .news-card-tag.yellow { background: var(--yellow); color: #000; }
+
+  .news-card-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .news-card-body {
+    font-size: 12px;
+    color: #90afc0;
+    line-height: 1.6;
+  }
+  .news-card-meta {
+    margin-top: 10px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    color: var(--neon);
+    letter-spacing: 2px;
+  }
+
+  .news-icon { font-size: 32px; float: right; margin: 0 0 5px 10px; }
+
+  .threat-meter {
+    margin: 10px 0;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    color: #ff2244;
+  }
+  .threat-bar {
+    height: 6px;
+    background: #001020;
+    border: 1px solid #ff224440;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 4px;
+  }
+  .threat-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff6622, #ff2244);
+    border-radius: 3px;
+    box-shadow: 0 0 8px #ff2244;
+  }
+
+  /* Comic interlude */
+  .comic-interlude {
+    margin: 20px 0;
+    border: 3px solid #000;
+    background: #fff;
+    color: #000;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .comic-interlude-header {
+    background: #ff2244;
+    padding: 6px 15px;
+    font-family: 'Bangers', cursive;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #fff;
+  }
+  .comic-panels {
+    display: flex;
+  }
+  .comic-panel {
+    flex: 1;
+    border-right: 3px solid #000;
+    padding: 12px;
+    min-height: 130px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .comic-panel:last-child { border-right: none; }
+  .comic-panel-bg-1 { background: #fff9e0; }
+  .comic-panel-bg-2 { background: #e8f4ff; }
+  .comic-panel-bg-3 { background: #ffe8e8; }
+
+  .comic-character { font-size: 50px; text-align: center; display: block; }
+  .comic-bubble {
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 12px;
+    padding: 5px 10px;
+    font-family: 'Bangers', cursive;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+    position: relative;
+    margin-top: 5px;
+  }
+  .comic-bubble::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: #000;
+  }
+  .comic-panel-caption {
+    font-family: 'Courier Prime', monospace;
+    font-size: 9px;
+    color: #444;
+    margin-top: 10px;
+    font-style: italic;
+    text-align: center;
+  }
+  .starburst {
+    display: inline-block;
+    background: var(--yellow);
+    color: #000;
+    font-family: 'Bangers', cursive;
+    font-size: 13px;
+    padding: 5px 12px;
+    clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
+  }
+
+  /* ============================
+     PAGE 3 — COMIC STORY
+  ============================ */
+  .comic-page {
+    background: #fdf6e3;
+    border: 3px solid #111;
+    color: #111;
+  }
+  .comic-page-header {
+    background: #111;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .comic-title-main {
+    font-family: 'Bangers', cursive;
+    font-size: 36px;
+    color: var(--yellow);
+    letter-spacing: 4px;
+  }
+  .comic-episode {
+    font-family: 'Bangers', cursive;
+    font-size: 18px;
+    color: var(--neon);
+    letter-spacing: 2px;
+  }
+
+  .comic-story-layout {
+    display: grid;
+    grid-template-areas:
+      "p1 p2 p3"
+      "p4 p5 p5"
+      "p6 p6 p7";
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4px;
+    padding: 15px;
+    background: #fdf6e3;
+  }
+
+  .sp1 { grid-area: p1; }
+  .sp2 { grid-area: p2; }
+  .sp3 { grid-area: p3; }
+  .sp4 { grid-area: p4; }
+  .sp5 { grid-area: p5; }
+  .sp6 { grid-area: p6; }
+  .sp7 { grid-area: p7; }
+
+  .story-panel {
+    border: 3px solid #111;
+    padding: 12px;
+    min-height: 160px;
+    position: relative;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .story-panel.yellow-bg { background: linear-gradient(135deg, #fffde0, #fff8a0); }
+  .story-panel.blue-bg { background: linear-gradient(135deg, #e0f0ff, #c0e0ff); }
+  .story-panel.dark-bg { background: linear-gradient(135deg, #1a1a2e, #16213e); color: #fff; }
+  .story-panel.red-bg { background: linear-gradient(135deg, #fff0f0, #ffd0d0); }
+  .story-panel.green-bg { background: linear-gradient(135deg, #f0fff0, #c8ffc8); }
+
+  .panel-scene {
+    font-size: 44px;
+    text-align: center;
+    display: block;
+    margin-bottom: 5px;
+  }
+  .panel-scene.big { font-size: 70px; }
+  .speech-bubble {
+    background: #fff;
+    border: 2.5px solid #111;
+    border-radius: 16px;
+    padding: 6px 10px;
+    font-family: 'Bangers', cursive;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+    max-width: 100%;
+    position: relative;
+    color: #111;
+  }
+  .speech-bubble.neon-speech {
+    background: var(--dark);
+    border-color: var(--neon);
+    color: var(--neon);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    text-shadow: 0 0 5px var(--neon);
+  }
+  .thought-bubble {
+    background: #f0f8ff;
+    border: 2px dashed #111;
+    border-radius: 50%;
+    padding: 8px 12px;
+    font-family: 'Bangers', cursive;
+    font-size: 11px;
+    text-align: center;
+  }
+  .sfx {
+    font-family: 'Bangers', cursive;
+    font-size: 28px;
+    color: var(--red);
+    text-shadow: 2px 2px 0 #000, 0 0 20px #ff224480;
+    transform: rotate(-5deg);
+    display: inline-block;
+  }
+  .panel-caption-box {
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    font-family: 'Courier Prime', monospace;
+    font-size: 9px;
+    padding: 4px 8px;
+    border-left: 3px solid var(--yellow);
+    margin-bottom: 5px;
+    font-style: italic;
+  }
+  .panel-num {
+    position: absolute;
+    top: 4px;
+    left: 6px;
+    font-family: 'Bangers', cursive;
+    font-size: 16px;
+    color: #666;
+    background: #fff;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #333;
+    border-radius: 50%;
+    z-index: 2;
+  }
+  .comic-credits {
+    background: #111;
+    padding: 8px 20px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Bangers', cursive;
+    font-size: 12px;
+    color: var(--neon);
+    letter-spacing: 2px;
+  }
+
+  /* ============================
+     PAGE 4 — GUEST LECTURE
+  ============================ */
+  .lecture-page {	
+    background: linear-gradient(160deg, #050d15, #0a1f30, #051018);
+    border: 3px solid var(--neon2);
+    box-shadow: 0 0 50px #00cfff20;
+  }
+  .lecture-content { padding: 40px; }
+  .lecture-announce {
+    font-family: 'Bangers', cursive;
+    font-size: 18px;
+    color: var(--yellow);
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .lecture-title-big {
+    font-family: 'Orbitron', monospace;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--neon2);
+    text-align: center;
+    text-shadow: 0 0 20px var(--neon2);
+    line-height: 1.2;
+    margin-bottom: 15px;
+  }
+  .lecture-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--neon2), transparent);
+    margin: 20px 0;
+  }
+  .lecture-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+  }
+  .lecture-detail-card {
+    background: #00cfff08;
+    border: 1px solid #00cfff30;
+    padding: 20px;
+    border-radius: 4px;
+    text-align: center;
+  }
+  .lecture-detail-icon { font-size: 36px; display: block; margin-bottom: 8px; }
+  .lecture-detail-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    color: #00cfff80;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  .lecture-detail-value {
+    font-family: 'Orbitron', monospace;
+    font-size: 14px;
+    color: var(--neon2);
+    font-weight: 700;
+  }
+
+  .speaker-box {
+    background: linear-gradient(135deg, #001525, #002040);
+    border: 1px solid var(--neon2);
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin: 15px 0;
+  }
+  .speaker-avatar {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #00cfff20, #00cfff40);
+    border: 2px solid var(--neon2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    flex-shrink: 0;
+    box-shadow: 0 0 20px #00cfff40;
+  }
+  .speaker-info-name {
+    font-family: 'Orbitron', monospace;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 5px;
+  }
+  .speaker-info-title {
+    font-size: 13px;
+    color: var(--neon2);
+    margin-bottom: 8px;
+  }
+  .speaker-info-bio {
+    font-size: 12px;
+    color: #90afc0;
+    line-height: 1.5;
+  }
+
+  .topics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin: 15px 0;
+  }
+  .topic-chip {
+    background: #00cfff10;
+    border: 1px solid #00cfff40;
+    padding: 10px 15px;
+    text-align: center;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: var(--neon2);
+    letter-spacing: 1px;
+  }
+  .topic-chip-icon { font-size: 20px; display: block; margin-bottom: 4px; }
+
+  .register-banner {
+    background: linear-gradient(90deg, var(--neon2), #0090ff, var(--neon2));
+    background-size: 200% auto;
+    animation: shimmer 3s linear infinite;
+    color: #000;
+    text-align: center;
+    padding: 15px;
+    font-family: 'Orbitron', monospace;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-top: 20px;
+    border-radius: 2px;
+  }
+  @keyframes shimmer {
+    0% { background-position: 0 center; }
+    100% { background-position: 200% center; }
+  }
+
+  /* Comic for lecture page */
+  .lecture-comic {
+    display: flex;
+    gap: 8px;
+    margin: 15px 0;
+  }
+  .lecture-comic-panel {
+    flex: 1;
+    border: 2px solid var(--neon2);
+    background: #00cfff08;
+    padding: 12px;
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* ============================
+     PAGE 5 — CAMPUS BUZZ
+  ============================ */
+  .campus-page {
+    background: #0d1520;
+    border: 3px solid var(--yellow);
+  }
+  .campus-header {
+    background: var(--yellow);
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .campus-header-title {
+    font-family: 'Bangers', cursive;
+    font-size: 36px;
+    color: #111;
+    letter-spacing: 4px;
+  }
+  .campus-header-sub {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: #333;
+    letter-spacing: 2px;
+  }
+
+  .campus-content { padding: 25px 40px; }
+
+  .exam-celebration {
+    background: linear-gradient(135deg, #1a2500, #2a3800);
+    border: 2px solid var(--yellow);
+    padding: 20px;
+    margin: 15px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .exam-cel-emoji {
+    font-size: 50px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .exam-cel-title {
+    font-family: 'Bangers', cursive;
+    font-size: 36px;
+    color: var(--yellow);
+    letter-spacing: 4px;
+    text-shadow: 0 0 20px var(--yellow);
+  }
+  .exam-cel-date {
+    font-family: 'Orbitron', monospace;
+    font-size: 12px;
+    color: var(--neon);
+    margin: 8px 0;
+    letter-spacing: 2px;
+  }
+  .exam-cel-body {
+    font-size: 13px;
+    color: #90c050;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .confetti-strip {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    font-size: 20px;
+    margin: 10px 0;
+  }
+
+  .campus-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 15px 0;
+  }
+
+  .campus-comic-strip {
+    border: 3px solid #111;
+    background: #fff;
+    color: #111;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .campus-comic-header {
+    background: var(--yellow);
+    padding: 6px 12px;
+    font-family: 'Bangers', cursive;
+    font-size: 14px;
+    color: #111;
+    letter-spacing: 2px;
+  }
+  .campus-comic-panels {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .campus-comic-panel {
+    border-top: 2px solid #111;
+    padding: 10px;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .campus-comic-panel.light { background: #fffde0; }
+  .campus-comic-panel.light2 { background: #e8f4e8; }
+  .campus-comic-panel.light3 { background: #ffeee0; }
+
+  .survivor-stats {
+    background: #0a1520;
+    border: 1px solid var(--yellow);
+    padding: 15px;
+  }
+  .stat-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 11px;
+    color: var(--yellow);
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+  }
+  .stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .stat-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: #a0c0d0;
+  }
+  .stat-bar-wrap {
+    flex: 1;
+    margin: 0 12px;
+    height: 6px;
+    background: #001020;
+    border: 1px solid #ffffff20;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .stat-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--neon), var(--neon2));
+  }
+  .stat-val {
+    font-family: 'Orbitron', monospace;
+    font-size: 11px;
+    color: var(--neon);
+  }
+
+  .meme-box {
+    background: #0a1520;
+    border: 1px solid #ffffff20;
+    padding: 15px;
+    text-align: center;
+    margin: 10px 0;
+  }
+  .meme-box-emoji { font-size: 60px; margin-bottom: 5px; }
+  .meme-text {
+    font-family: 'Bangers', cursive;
+    font-size: 22px;
+    color: var(--white);
+    letter-spacing: 1px;
+    line-height: 1.2;
+  }
+  .meme-caption {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    color: #506080;
+    margin-top: 5px;
+    letter-spacing: 2px;
+  }
+
+  /* ============================
+     PAGE 6 — DEEP DIVE / JOURNAL
+  ============================ */
+  .journal-page {
+    background: var(--dark3);
+    border: 3px solid #5050ff;
+  }
+  .journal-header {
+    background: linear-gradient(90deg, #0a0a30, #151540, #0a0a30);
+    padding: 20px 40px;
+    border-bottom: 2px solid #5050ff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .journal-title-section {
+    font-family: 'Orbitron', monospace;
+    font-size: 11px;
+    color: #8080ff;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+  .journal-content { padding: 30px 40px; }
+
+  .journal-article-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+  .journal-byline {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: #8080ff;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+
+  .journal-two-col {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 25px;
+  }
+  .journal-body {
+    font-size: 12px;
+    color: #90a0b8;
+    line-height: 1.8;
+  }
+  .journal-body p { margin-bottom: 12px; }
+  .journal-body strong { color: var(--white); }
+  .journal-body em { color: #8080ff; font-style: normal; }
+
+  .journal-sidebar {}
+  .data-card {
+    background: #0a0a30;
+    border: 1px solid #5050ff40;
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  .data-card-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 9px;
+    color: #8080ff;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+  .data-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .data-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    color: #6070a0;
+  }
+  .data-value {
+    font-family: 'Orbitron', monospace;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .data-value.red { color: var(--red); }
+  .data-value.green { color: var(--neon); }
+  .data-value.blue { color: var(--neon2); }
+  .data-value.yellow { color: var(--yellow); }
+
+  .timeline {
+    position: relative;
+    padding-left: 20px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 6px; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, #5050ff, transparent);
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 12px;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -17px; top: 4px;
+    width: 8px; height: 8px;
+    background: #5050ff;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #5050ff;
+  }
+  .timeline-date {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 8px;
+    color: #8080ff;
+    letter-spacing: 1px;
+  }
+  .timeline-text {
+    font-size: 11px;
+    color: #90a0b8;
+    line-height: 1.4;
+  }
+
+  .pullquote {
+    border-left: 4px solid #5050ff;
+    padding: 15px 20px;
+    background: #0a0a3010;
+    margin: 20px 0;
+    font-family: 'Courier Prime', monospace;
+    font-size: 14px;
+    font-style: italic;
+    color: #c0c8e8;
+    line-height: 1.6;
+  }
+  .pullquote-attr {
+    font-size: 10px;
+    color: #8080ff;
+    margin-top: 8px;
+    font-style: normal;
+    font-family: 'Share Tech Mono', monospace;
+    letter-spacing: 1px;
+  }
+
+  /* ============================
+     PAGE 7 — BACK PAGE
+  ============================ */
+  .back-page {
+    background: var(--dark);
+    border: 3px solid var(--neon);
+    box-shadow: 0 0 60px #00ff8820;
+  }
+  .back-content { padding: 30px 40px; }
+
+  .back-three-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin: 15px 0;
+  }
+
+  .ctf-box {
+    background: #001510;
+    border: 2px solid var(--neon);
+    padding: 20px;
+    font-family: 'Share Tech Mono', monospace;
+    box-shadow: inset 0 0 20px #00ff8808;
+  }
+  .ctf-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 14px;
+    color: var(--neon);
+    text-shadow: 0 0 10px var(--neon);
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+  }
+  .ctf-challenge {
+    background: #000;
+    border: 1px solid var(--neon);
+    padding: 12px;
+    margin-bottom: 10px;
+    font-size: 10px;
+    color: var(--neon);
+    line-height: 1.6;
+  }
+  .ctf-hint {
+    font-size: 9px;
+    color: #00ff8860;
+    margin-top: 5px;
+  }
+  .ctf-pts {
+    float: right;
+    background: var(--neon);
+    color: #000;
+    font-family: 'Orbitron', monospace;
+    font-size: 9px;
+    padding: 2px 6px;
+    font-weight: 700;
+  }
+
+  .about-box {
+    background: #001520;
+    border: 1px solid var(--neon2);
+    padding: 20px;
+  }
+  .about-logo {
+    font-family: 'Orbitron', monospace;
+    font-size: 18px;
+    color: var(--neon);
+    text-shadow: 0 0 15px var(--neon);
+    margin-bottom: 5px;
+  }
+  .about-subtitle-text {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    color: var(--neon2);
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+  .about-body {
+    font-size: 11px;
+    color: #7090a8;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  .about-link {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    color: var(--neon);
+    display: block;
+    margin-bottom: 4px;
+    letter-spacing: 1px;
+  }
+
+  .tips-box {
+    background: #150a00;
+    border: 1px solid var(--yellow);
+    padding: 20px;
+  }
+  .tip-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: flex-start;
+  }
+  .tip-icon { font-size: 20px; flex-shrink: 0; }
+  .tip-text {
+    font-size: 11px;
+    color: #c0a060;
+    line-height: 1.4;
+  }
+  .tip-text strong { color: var(--yellow); font-family: 'Orbitron', monospace; font-size: 9px; }
+
+  .quote-of-issue {
+    background: linear-gradient(135deg, #001520, #000d15);
+    border: 1px solid #00ff8830;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+    position: relative;
+  }
+  .quote-of-issue::before {
+    content: '"';
+    font-family: 'Bangers', cursive;
+    font-size: 80px;
+    color: #00ff8815;
+    position: absolute;
+    top: -10px; left: 15px;
+    line-height: 1;
+  }
+  .qoi-text {
+    font-family: 'Courier Prime', monospace;
+    font-size: 15px;
+    font-style: italic;
+    color: var(--white);
+    line-height: 1.6;
+    position: relative; z-index: 1;
+  }
+  .qoi-attr {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: var(--neon);
+    margin-top: 8px;
+    letter-spacing: 2px;
+  }
+
+  .back-footer {
+    background: #001015;
+    border-top: 2px solid var(--neon);
+    padding: 15px 40px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    gap: 20px;
+  }
+  .footer-logo {
+    font-family: 'Orbitron', monospace;
+    font-size: 11px;
+    color: var(--neon);
+    letter-spacing: 2px;
+  }
+  .footer-center {
+    text-align: center;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    color: #304050;
+    letter-spacing: 2px;
+    line-height: 1.6;
+  }
+  .footer-right {
+    text-align: right;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    color: var(--neon2);
+    letter-spacing: 1px;
+  }
+
+  .alert-ticker {
+    background: var(--red);
+    color: #fff;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    padding: 5px 40px;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .page-5-back-comic {
+    background: #fff;
+    border: 3px solid #111;
+    color: #111;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .mini-news-ticker {
+    background: #001020;
+    border: 1px solid var(--neon);
+    padding: 8px 15px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    color: var(--neon);
+    letter-spacing: 2px;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 10px 0;
+  }
+
+  /* Decorative elements */
+  .hex-pattern {
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 80px;
+    color: #00ff8805;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .glitch {
+    position: relative;
+  }
+  .glitch::before, .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0; left: 0;
+    color: inherit;
+  }
+  .glitch::before {
+    animation: glitch1 2s infinite;
+    color: var(--red);
+    clip: rect(0, 900px, 0, 0);
+  }
+  .glitch::after {
+    animation: glitch2 3s infinite;
+    color: var(--neon2);
+    clip: rect(0, 900px, 0, 0);
+  }
+  @keyframes glitch1 {
+    0%,100% { clip: rect(100px,900px,105px,0); transform: translateX(0); }
+    10% { clip: rect(20px,900px,25px,0); transform: translateX(-3px); }
+    20% { clip: rect(60px,900px,62px,0); transform: translateX(3px); }
+    30% { clip: rect(0,900px,0,0); }
+  }
+  @keyframes glitch2 {
+    0%,100% { clip: rect(0,900px,0,0); transform: translateX(0); }
+    15% { clip: rect(50px,900px,55px,0); transform: translateX(3px); }
+    25% { clip: rect(10px,900px,15px,0); transform: translateX(-3px); }
+    35% { clip: rect(0,900px,0,0); }
+  }
+
+  /* ============================
+     RESPONSIVE — MOBILE & TABLET
+  ============================ */
+  @media (max-width: 850px) {
+    body { font-size: 14px; }
+    .page { margin: 10px auto; border-width: 2px; }
+
+    /* Cover */
+    .cover-content { padding: 20px 18px; }
+    .cover-title { font-size: 36px; letter-spacing: 3px; }
+    .cover-subtitle { font-size: 11px; letter-spacing: 3px; }
+    .cover-main-headline { font-size: 26px; }
+    .cover-skull { font-size: 72px; }
+    .cover-header-bar { flex-direction: column; gap: 8px; align-items: flex-start; }
+    .cover-issue-box { flex-wrap: wrap; gap: 10px; justify-content: center; }
+    .cover-teasers { grid-template-columns: 1fr; gap: 10px; }
+    .cover-comic-strip { flex-wrap: wrap; gap: 8px; }
+    .cover-comic-strip .mini-panel { min-width: calc(50% - 4px); flex: 1 1 calc(50% - 4px); }
+    .cover-footer { flex-direction: column; gap: 5px; font-size: 9px; }
+
+    /* Page headers */
+    .page-header { padding: 12px 18px; flex-wrap: wrap; gap: 5px; }
+    .page-header-title { font-size: 9px; letter-spacing: 2px; }
+
+    /* News page */
+    .news-content { padding: 16px 18px; }
+    .news-grid { grid-template-columns: 1fr; }
+    .section-title { font-size: 32px; }
+    .comic-panels { flex-direction: column; }
+    .comic-panel { border-right: none; border-top: 2px solid #000; }
+    .comic-panel:first-child { border-top: none; }
+
+    /* Comic story page */
+    .comic-page-header { flex-direction: column; gap: 8px; padding: 12px 18px; }
+    .comic-title-main { font-size: 22px; }
+    .comic-story-layout {
+      grid-template-areas:
+        "p1"
+        "p2"
+        "p3"
+        "p4"
+        "p5"
+        "p6"
+        "p7";
+      grid-template-columns: 1fr;
+      padding: 10px;
+    }
+    .sp1,.sp2,.sp3,.sp4,.sp5,.sp6,.sp7 { grid-area: unset; }
+    .story-panel { min-height: 120px; }
+
+    /* Lecture page */
+    .lecture-content { padding: 20px 18px; }
+    .lecture-title-big { font-size: 22px; }
+    .lecture-details-grid { grid-template-columns: 1fr; gap: 12px; }
+    .topics-grid { grid-template-columns: 1fr 1fr; }
+    .speaker-box { flex-direction: column; text-align: center; }
+    .lecture-comic { flex-direction: column; }
+
+    /* Campus page */
+    .campus-content { padding: 16px 18px; }
+    .campus-header { flex-direction: column; gap: 5px; padding: 12px 18px; }
+    .campus-header-title { font-size: 26px; }
+    .campus-two-col { grid-template-columns: 1fr; }
+    .exam-cel-title { font-size: 24px; }
+
+    /* Journal page */
+    .journal-content { padding: 16px 18px; }
+    .journal-two-col { grid-template-columns: 1fr; }
+    .journal-article-title { font-size: 16px; }
+
+    /* Back page */
+    .back-content { padding: 16px 18px; }
+    .back-three-col { grid-template-columns: 1fr; gap: 15px; }
+    .back-footer { grid-template-columns: 1fr; gap: 10px; text-align: center; }
+    .footer-right { text-align: center; }
+
+    /* Contact section on back page */
+    .back-content > div[style*="justify-content:space-between"] {
+      flex-direction: column !important;
+      gap: 15px !important;
+    }
+
+    /* Alert ticker */
+    .alert-ticker { font-size: 9px; padding: 4px 18px; }
+
+    /* Mini news ticker */
+    .mini-news-ticker { font-size: 8px; }
+  }
+
+  @media (max-width: 480px) {
+    .cover-title { font-size: 28px; letter-spacing: 2px; }
+    .cover-main-headline { font-size: 20px; letter-spacing: 1px; }
+    .cover-skull { font-size: 56px; }
+    .cover-comic-strip .mini-panel { min-width: 100%; flex: 1 1 100%; }
+    .cover-issue-box { gap: 8px; }
+    .cover-issue-item { padding: 8px 12px; }
+    .section-title { font-size: 26px; }
+    .lecture-title-big { font-size: 18px; }
+    .topics-grid { grid-template-columns: 1fr; }
+    .register-banner { font-size: 10px; letter-spacing: 1px; padding: 12px; }
+    .qoi-text { font-size: 13px; }
+    .news-card-title { font-size: 12px; }
+    .comic-character { font-size: 36px; }
+  }
+
+  /* Print stays A4 */
+  @media print {
+    body { background: #fff; }
+    .page { width: 794px; min-height: 1123px; margin: 0; page-break-after: always; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ==================== PAGE 1: COVER ==================== -->
+<div class="page cover">
+  <div class="cover-grid"></div>
+  <div class="cover-scan"></div>
+  <div class="binary-bg" style="top:40px;left:0;padding:0 20px">
+    01001000 01000001 01000011 01001011 01000101 01000100&nbsp;&nbsp;
+    10110010 01001000 10101001 01000101 01101011 10110101
+    01001000 01000001 01000011 01001011 01000101 01000100
+    01001000 01000001 01000011 01001011 01000101 01000100
+    01001000 01000001 01000011 01001011 01000101 01000100
+    01001000 01000001 01000011 01001011 01000101 01000100
+    01001000 01000001 01000011 01001011 01000101 01000100
+    01001000 01000001 01000011 01001011 01000101 01000100
+    01001000 01000001 01000011 01001011 01000101 01000100
+    01001000 01000001 01000011 01001011 01000101 01000100
+    01001000 01000001 01000011 01001011 01000101 01000100
+    01001000 01000001 01000011 01001011 01000101 01000100
+    01001000 01000001 01000011 01001011 01000101 01000100
+    01001000 01000001 01000011 01001011 01000101 01000100
+    01001000 01000001 01000011 01001011 01000101 01000100
+    01001000 01000001 01000011 01001011 01000101 01000100
+    01001000 01000001 01000011 01001011 01000101 01000100
+    01001000 01000001 01000011 01001011 01000101 01000100
+    01001000 01000001 01000011 01001011 01000101 01000100
+  </div>
+
+  <div class="cover-content">
+    <div class="cover-header-bar">
+      <div class="cover-tag"> CLASSIFIED ISSUE_03  MAR 2026</div>
+      <div class="mmcoe-badge">MMCOE · PUNE</div>
+      <div class="cover-tag">ENCRYPTION: AES-256 </div>
+    </div>
+
+    <div class="cover-skull">💀</div>
+
+    <div class="cover-title glitch" data-text="GHOST">GHOST</div>
+    <div class="cover-subtitle">▸ P R O T O C O L ◂</div>
+    <div style="font-family:'Share Tech Mono',monospace;font-size:11px;color:#00ff8880;letter-spacing:4px;margin:5px 0;">THE CYPHER CLUB CHRONICLES</div>
+
+    <div class="cover-divider"></div>
+
+    <div style="font-family:'Rajdhani',sans-serif;font-size:11px;color:#506880;letter-spacing:3px;text-transform:uppercase;text-align:center;margin-bottom:15px;">
+      Powered by <span style="color:var(--neon);font-family:'Orbitron',monospace">CYPHER CLUB</span> &nbsp;|&nbsp; Marathwada Mitra Mandal College of Engineering, Pune
+    </div>
+
+    <div class="cover-issue-box">
+      <div class="cover-issue-item">
+        <span class="cover-issue-label">VOLUME</span>
+        <span class="cover-issue-value">01</span>
+      </div>
+      <div class="cover-issue-item">
+        <span class="cover-issue-label">ISSUE</span>
+        <span class="cover-issue-value">01</span>
+      </div>
+      <div class="cover-issue-item">
+        <span class="cover-issue-label">DATE</span>
+        <span class="cover-issue-value">MAR 2026</span>
+      </div>
+      <div class="cover-issue-item">
+        <span class="cover-issue-label">AUTHOR</span>
+        <span class="cover-issue-value">GHOST</span>
+      </div>
+    </div>
+
+    <div class="cover-main-headline">⚠ BREACHES, LECTURES & EXAM SURVIVAL ⚠</div>
+    <div style="font-family:'Share Tech Mono',monospace;font-size:11px;color:#506880;text-align:center;margin-bottom:20px;letter-spacing:2px;">
+      YOUR WEEKLY DOSE OF CYBER CHAOS, CAMPUS DRAMA & DARK HUMOR
+    </div>
+
+    <!-- Mini comic strip on cover -->
+    <div class="cover-comic-strip">
+      <div class="mini-panel mini-panel-bg1">
+        <span class="emoji">🧑‍💻</span>
+        <span class="caption">STUDENT OPENS LAPTOP AT 2AM</span>
+      </div>
+      <div class="mini-panel mini-panel-bg2">
+        <span class="emoji">🔓</span>
+        <span class="caption">TRIES TO "STUDY" CYBERSECURITY</span>
+      </div>
+      <div class="mini-panel mini-panel-bg3">
+        <span class="emoji">🚨</span>
+        <span class="caption">ACCIDENTALLY TRIGGERS HONEYPOT</span>
+      </div>
+      <div class="mini-panel mini-panel-bg4">
+        <span class="emoji">😅</span>
+        <span class="caption">PROF EMAILS AT 7AM: "NICE TRY"</span>
+      </div>
+    </div>
+
+    <div class="cover-teasers">
+      <div class="cover-teaser">
+        <div class="cover-teaser-title">🌐 WORLD NEWS</div>
+        <div class="cover-teaser-text">Salt Typhoon still lurking in telecom giants. AI-powered attacks surge 340%.</div>
+        <div class="cover-teaser-pg">PAGE 02 →</div>
+      </div>
+      <div class="cover-teaser">
+        <div class="cover-teaser-title">🎤 GUEST LECTURE</div>
+        <div class="cover-teaser-text">Cybersecurity expert coming to MMCOE — March 10, 2026. Don't miss it!</div>
+        <div class="cover-teaser-pg">PAGE 04 →</div>
+      </div>
+      <div class="cover-teaser">
+        <div class="cover-teaser-title">🎉 EXAMS OVER!</div>
+        <div class="cover-teaser-text">SY Unit Tests ended Thursday, 5th March. Finally. Breathe. (Until internals.)</div>
+        <div class="cover-teaser-pg">PAGE 05 →</div>
+      </div>
+    </div>
+
+    <div class="cover-footer">
+      <span>© 2026 CYPHER CLUB — MMCOE</span>
+      <span>AUTHOR: G H O S T &nbsp;|&nbsp; CLASSIFIED</span>
+      <span>NOT FOR DISTRIBUTION OUTSIDE MMCOE</span>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PAGE 2: CYBER NEWS ==================== -->
+<div class="page news-page">
+  <div class="alert-ticker">
+    🔴 BREAKING: POWERSCHOOL BREACH EXPOSES 50M+ STUDENTS &nbsp;&nbsp;/&nbsp;&nbsp; 🔴 SALT TYPHOON HACKERS STILL IN TELECOM NETWORKS &nbsp;&nbsp;/&nbsp;&nbsp; 🔴 AI-POWERED MALWARE DETECTED IN 14 COUNTRIES &nbsp;&nbsp;/&nbsp;&nbsp; 🔴 DEEPSEEK DATA EXPOSURE CONFIRMED &nbsp;&nbsp;/
+  </div>
+  <div class="page-header">
+    <span class="page-header-title"> GHOST PROTOCOL — CYBER THREAT INTELLIGENCE </span>
+    <span class="page-num">02 / 07</span>
+  </div>
+  <div class="news-content">
+    <div class="section-title">THREAT INTEL</div>
+    <div class="section-subtitle"> GLOBAL CYBERSECURITY SITUATION REPORT — MARCH 2026 </div>
+
+    <div class="news-grid">
+      <div style="display:flex;flex-direction:column;gap:15px;">
+
+        <div class="news-card">
+          <span class="news-icon">🌊</span>
+          <div class="news-card-tag">NATION-STATE</div>
+          <div class="news-card-title">Salt Typhoon: The Hack That Won't Die</div>
+          <div class="news-card-body">
+            The Chinese hacker collective dubbed "Salt Typhoon" continues to haunt major US telecom providers including AT&T, Verizon, and T-Mobile. Intelligence officials confirm the group has maintained persistent access to some networks for over 18 months, intercepting communications of government officials and activists. The scope? Officially described as "the most significant telecom breach in US history."
+          </div>
+          <div class="threat-meter">THREAT LEVEL: CRITICAL
+            <div class="threat-bar"><div class="threat-fill" style="width:95%"></div></div>
+          </div>
+          <div class="news-card-meta"> SOURCE: CISA ADVISORY — JAN 2026</div>
+        </div>
+
+        <div class="news-card">
+          <div class="news-card-tag blue">DATA BREACH</div>
+          <div class="news-card-title">PowerSchool: 50M+ Students & Teachers Exposed</div>
+          <div class="news-card-body">
+            Education giant PowerSchool suffered a catastrophic breach in early 2026. Attackers exfiltrated personal data of over 50 million students and 6.5 million teachers — including SSNs, medical records, and grades. The attacker reportedly used a single compromised credential. Classic case of "no MFA = no mercy."
+          </div>
+          <div class="threat-meter">THREAT LEVEL: HIGH
+            <div class="threat-bar"><div class="threat-fill" style="width:80%"></div></div>
+          </div>
+          <div class="news-card-meta"> SOURCE: POWERSCHOOL ADVISORY — FEB 2026</div>
+        </div>
+
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:15px;">
+
+        <div class="news-card">
+          <div class="news-card-tag yellow">AI THREAT</div>
+          <div class="news-card-title">AI-Powered Phishing Up 340% in 2026</div>
+          <div class="news-card-body">
+            Security researchers at CrowdStrike report a 340% spike in AI-generated phishing emails since last year. LLMs are now being used to craft hyper-personalized spear-phishing messages that bypass traditional filters. Even seasoned IT pros have been fooled.
+          </div>
+          <div class="threat-meter">THREAT LEVEL: HIGH
+            <div class="threat-bar"><div class="threat-fill" style="width:78%"></div></div>
+          </div>
+          <div class="news-card-meta"> SOURCE: CROWDSTRIKE Q1 2026 REPORT</div>
+        </div>
+
+        <div class="news-card">
+          <div class="news-card-tag green">PRIVACY</div>
+          <div class="news-card-title">DeepSeek AI Exposed User Data & Prompts</div>
+          <div class="news-card-body">
+            Chinese AI startup DeepSeek was found storing user conversations in an unprotected database accessible from the internet. Researchers discovered chat logs, API keys, and backend system data — a textbook example of insecure default configurations. Regulators in Italy and Ireland opened probes immediately.
+          </div>
+          <div class="threat-meter">THREAT LEVEL: MEDIUM
+            <div class="threat-bar"><div class="threat-fill" style="width:60%;background:linear-gradient(90deg,#ff9900,#ffcc00)"></div></div>
+          </div>
+          <div class="news-card-meta"> SOURCE: WIRED — FEB 2026</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Comic interlude -->
+    <div class="comic-interlude">
+      <div class="comic-interlude-header">🎭 GHOST'S TAKE — "WHEN HACKERS MEET THEIR MATCH"</div>
+      <div class="comic-panels">
+        <div class="comic-panel comic-panel-bg-1">
+          <div class="panel-num">1</div>
+          <span class="comic-character" style="margin-top:15px">🧑‍💻</span>
+          <div class="comic-bubble">I'm gonna hack a Fortune 500 company! What could go wrong?</div>
+          <div class="comic-panel-caption">A confident hacker at 3am...</div>
+        </div>
+        <div class="comic-panel comic-panel-bg-2">
+          <div class="panel-num">2</div>
+          <span class="comic-character" style="margin-top:15px">🏢</span>
+          <div class="comic-bubble">Their honeypot: 50 decoy servers, AI detection, and 3 FBI agents watching.</div>
+          <div class="comic-panel-caption">Meanwhile, at the "target"...</div>
+        </div>
+        <div class="comic-panel comic-panel-bg-3">
+          <div class="panel-num">3</div>
+          <span class="comic-character" style="margin-top:15px">🚨😱</span>
+          <div class="comic-bubble">ERROR 403: YOU HAVE BEEN HONEYPOTTED. NICE TRY. PLEASE REMAIN SEATED.</div>
+          <div class="comic-panel-caption">15 minutes later...</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mini-news-ticker">
+      ▶ RANSOMWARE GROUP "LOCKBIT 4.0" RETURNS / META FINED €1.2B FOR EU VIOLATIONS / MICROSOFT PATCHES 94 VULNS IN MARCH 2026 PATCH TUESDAY / INDIA CERT ISSUES WARNING ON ANDROID BANKING TROJANS ▶
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PAGE 3: COMIC STORY ==================== -->
+<div class="page comic-page">
+  <div class="comic-page-header">
+    <div>
+      <div class="comic-title-main">🍵 THE NIGHT BEFORE THE EXAM 🍵</div>
+      <div style="font-family:'Bangers',cursive;font-size:13px;color:#aaa;letter-spacing:2px;">AN ABSOLUTELY UNHINGED TRUE STORY FROM MMCOE</div>
+    </div>
+    <div class="comic-episode">EP. 01</div>
+  </div>
+
+  <div style="background:#fffbe0;padding:8px 15px;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #111;">
+    <span style="font-family:'Courier Prime',monospace;font-size:10px;font-style:italic;">Written & Illustrated by GHOST | Cypher Club MMCOE</span>
+    <span class="starburst">100% REAL*</span>
+    <span style="font-family:'Courier Prime',monospace;font-size:9px;font-style:italic;">*this happened. you know it happened.</span>
+  </div>
+
+  <div class="comic-story-layout">
+
+    <!-- Panel 1 -->
+    <div class="story-panel yellow-bg sp1">
+      <div class="panel-num">1</div>
+      <div class="panel-caption-box">'MMCOE Hostel. Room 204. 10:00 PM. Night before Unit Test.</div>
+      <span class="panel-scene">🌙📚</span>
+      <div class="speech-bubble">Okay. Exam is tomorrow. I have 8 full chapters to cover. Let's GO. Nothing can stop me.</div>
+    </div>
+
+    <!-- Panel 2 -->
+    <div class="story-panel blue-bg sp2">
+      <div class="panel-num">2</div>
+      <span class="panel-scene">📱😏</span>
+      <div class="speech-bubble">Wait... one quick reel. Just one. For motivation.</div>
+      <div class="panel-caption-box">10:03 PM. The fatal mistake.</div>
+    </div>
+
+    <!-- Panel 3 -->
+    <div class="story-panel green-bg sp3">
+      <div class="panel-num">3</div>
+      <span class="panel-scene">😂🛋️</span>
+      <div class="thought-bubble">I'll study right after this. And this one. And just this last one...</div>
+      <div class="panel-caption-box">12:47 AM. Still on the couch.</div>
+    </div>
+
+    <!-- Panel 4 -->
+    <div class="story-panel red-bg sp4">
+      <div class="panel-num">4</div>
+      <span class="panel-scene">😱⏰</span>
+      <div class="speech-bubble">WAIT — IT'S 2 AM?! BHAI BHAI BHAI BHAI—</div>
+      <div class="panel-caption-box">Panic mode: ACTIVATED.</div>
+    </div>
+
+    <!-- Panel 5 - wide -->
+    <div class="story-panel dark-bg sp5" style="min-height:200px;">
+      <div class="panel-num">5</div>
+      <div style="display:flex;gap:15px;align-items:center;height:100%;padding-top:10px;">
+        <div style="flex:1;display:flex;flex-direction:column;gap:8px;align-items:center;">
+          <div class="panel-caption-box" style="width:100%">2:01 AM. Emergency WhatsApp message to entire class group.</div>
+          <span style="font-size:48px;">📲😭</span>
+          <div class="speech-bubble" style="font-size:12px;line-height:1.4;">"YAAR NOTES BHEJ JALDI!! PLEASE PLEASE PLEASE!! 🙏🙏 BHAI EK BAAR!! LAST TIME!!"</div>
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;gap:8px;">
+          <div class="panel-caption-box">The group responds instantly. At 2 AM. Like everyone was awake...</div>
+          <div style="background:#fff;border:2px solid #111;border-radius:10px;padding:10px;font-family:'Bangers',cursive;font-size:11px;color:#111;line-height:1.8;">
+            Priya: "SAME. SEND ME TOO" 😭<br>
+            Aryan: "Bhai I also need notes lol"<br>
+            Rohan: "WHO HAS NOTES FOR UNIT 3??"<br>
+            Sneha: "Chapter 5 anyone?? Anyone??"<br>
+            <span style="color:#888;font-size:10px;">+23 others are asking for notes.</span><br>
+            <span style="color:#c00;font-size:10px;">0 people are sending notes.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 6 - wide -->
+    <div class="story-panel sp6" style="background:linear-gradient(135deg,#fff8f0,#ffe0c0);min-height:160px;">
+      <div class="panel-num">6</div>
+      <div class="panel-caption-box">'5:30 AM. Three energy drinks deep. Notes open. Eyes... not.</div>
+      <div style="display:flex;align-items:center;gap:20px;height:100%;padding-top:15px;">
+        <span style="font-size:55px;">☕😵</span>
+        <div style="flex:1;">
+          <div class="speech-bubble" style="font-size:12px;line-height:1.5;">
+            I have read this same paragraph 11 times and I still don't know what it says. The words are moving. Is that normal? I think I understand everything now. Or nothing. Probably nothing.
+          </div>
+        </div>
+        <div style="text-align:center;">
+          <span style="font-size:40px;">📖💤</span>
+          <div class="speech-bubble" style="font-size:11px;margin-top:5px;">*falls asleep on book at 6:15 AM*</div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:8px;"><span class="sfx">ZZzzZZzz...</span></div>
+    </div>
+
+    <!-- Panel 7 -->
+    <div class="story-panel yellow-bg sp7" style="min-height:160px;">
+      <div class="panel-num">7</div>
+      <div class="panel-caption-box">'Exam hall. 10:00 AM. Paper in hand.</div>
+      <span class="panel-scene">😤📝</span>
+      <div class="speech-bubble" style="font-size:12px;">"Bhai this is all from the last 10 pages I read at 6 AM. I KNEW everything. I was BUILT for this moment."</div>
+      <div class="panel-caption-box" style="margin-top:8px;text-align:center;font-size:10px;font-weight:bold">
+        — Every MMCOE student, every single exam, since 2004.
+      </div>
+    </div>
+
+  </div>
+
+  <div class="comic-credits">
+    <span>📖 GHOST PROTOCOL — ISSUE 01</span>
+    <span>⚡ NEXT: THE DAY THE PRINTER DIED (BEFORE SUBMISSIONS) ⚡</span>
+    <span>CYPHER CLUB © MMCOE 2026</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 4: GUEST LECTURE ==================== -->
+<div class="page lecture-page">
+  <div class="page-header" style="border-bottom-color:var(--neon2);background:linear-gradient(135deg,#000d20,#001530);">
+    <span class="page-header-title" style="color:var(--neon2)"> CYPHER CLUB — CAMPUS EVENTS </span>
+    <span class="page-num" style="color:var(--neon)">04 / 07</span>
+  </div>
+
+  <div class="lecture-content">
+    <div class="lecture-announce">⚡ SAVE THE DATE — EXCLUSIVE EVENT ⚡</div>
+
+    <div class="lecture-title-big">
+      CYBERSECURITY<br>GUEST LECTURE 2026
+    </div>
+
+    <div style="text-align:center;font-family:'Share Tech Mono',monospace;font-size:12px;color:#5090b0;letter-spacing:3px;margin-bottom:10px;">
+      PRESENTED BY CYPHER CLUB × MMCOE AI-DS DEPARTMENT
+    </div>
+
+    <div class="lecture-divider"></div>
+
+    <!-- Comic for lecture -->
+    <div class="lecture-comic">
+      <div class="lecture-comic-panel">
+        <span style="font-size:40px;text-align:center">🎓😴</span>
+        <div class="speech-bubble neon-speech" style="font-size:9px;">Monday 8AM lecture = sleep mode</div>
+      </div>
+      <div class="lecture-comic-panel" style="border-color:var(--yellow)">
+        <span style="font-size:40px;text-align:center">📢✨</span>
+        <div class="speech-bubble neon-speech" style="border-color:var(--yellow);color:var(--yellow);font-size:9px;">CYPHER CLUB: "THERE'S A CYBERSEC EXPERT COMING"</div>
+      </div>
+      <div class="lecture-comic-panel">
+        <span style="font-size:40px;text-align:center">🧑‍💻⚡</span>
+        <div class="speech-bubble neon-speech" style="font-size:9px;">SUDDENLY EVERYONE IS A MORNING PERSON</div>
+      </div>
+    </div>
+
+    <div class="lecture-details-grid">
+      <div class="lecture-detail-card">
+        <span class="lecture-detail-icon">📅</span>
+        <div class="lecture-detail-label">Date</div>
+        <div class="lecture-detail-value">TUESDAY, 10 MARCH 2026</div>
+      </div>
+      <div class="lecture-detail-card">
+        <span class="lecture-detail-icon">🕐</span>
+        <div class="lecture-detail-label">Time</div>
+        <div class="lecture-detail-value">11:00 AM — 1:00 PM</div>
+      </div>
+      <div class="lecture-detail-card">
+        <span class="lecture-detail-icon">📍</span>
+        <div class="lecture-detail-label">Venue</div>
+        <div class="lecture-detail-value">SEMINAR HALL, MMCOE</div>
+      </div>
+      <div class="lecture-detail-card">
+        <span class="lecture-detail-icon">🎯</span>
+        <div class="lecture-detail-label">Open For</div>
+        <div class="lecture-detail-value">ALL BRANCHES & YEARS</div>
+      </div>
+    </div>
+
+    <div class="speaker-box">
+      <div class="speaker-avatar">🕵️</div>
+      <div>
+        <div class="speaker-info-name">Chief Guest: Cybersecurity Expert</div>
+        <div class="speaker-info-title">🏢 Industry Veteran | Ethical Hacker | Security Researcher</div>
+        <div class="speaker-info-bio">
+          A seasoned cybersecurity professional with 15+ years in the field, having worked with national CERTs, Fortune 500 security teams, and conducted security audits for critical infrastructure. Speaker at DEF CON, Black Hat, and c0c0n. Certified OSCP, CEH, CISSP.
+        </div>
+      </div>
+    </div>
+
+    <div style="font-family:'Orbitron',monospace;font-size:11px;color:var(--neon2);letter-spacing:3px;margin-bottom:12px;text-transform:uppercase;"> Topics to be Covered</div>
+    <div class="topics-grid">
+      <div class="topic-chip"><span class="topic-chip-icon">🔐</span>Zero Trust Architecture</div>
+      <div class="topic-chip"><span class="topic-chip-icon">🤖</span>AI in Cyber Attacks</div>
+      <div class="topic-chip"><span class="topic-chip-icon">🕵️</span>Blue Team Tactics</div>
+      <div class="topic-chip"><span class="topic-chip-icon">🛡️</span>Incident Response</div>
+      <div class="topic-chip"><span class="topic-chip-icon">💼</span>Career in CyberSec</div>
+      <div class="topic-chip"><span class="topic-chip-icon">🔎</span>Defensive Techniques</div>
+    </div>
+
+    <div class="register-banner">
+      🔐 REGISTRATION REQUIRED — CONTACT CYPHER CLUB | SEATS LIMITED 🔐
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PAGE 5: CAMPUS BUZZ ==================== -->
+<div class="page campus-page">
+  <div class="campus-header">
+    <div>
+      <div class="campus-header-title">📡 CAMPUS BUZZ</div>
+      <div class="campus-header-sub"> MMCOE MMCOE MMCOE — THE WORD ON THE CORRIDOR </div>
+    </div>
+    <div style="font-family:'Orbitron',monospace;font-size:11px;color:#333;letter-spacing:2px;">05 / 07</div>
+  </div>
+
+  <div class="campus-content">
+
+    <!-- Exam over celebration -->
+    <div class="exam-celebration">
+      <div class="confetti-strip">🎉🥳🎊🎉🥳🎊🎉🥳🎊🎉</div>
+      <span class="exam-cel-emoji">🏆</span>
+      <div class="exam-cel-title">UNIT TESTS: DEFEATED!</div>
+      <div class="exam-cel-date">📅 SY UNIT TEST EXAM CONCLUDED — THURSDAY, 5 MARCH 2026</div>
+      <div class="exam-cel-body">
+        The Second Year unit tests have officially ended, and MMCOE students across all branches have survived another academic battle. Fingers were cramped, notebooks were decimated, coffee was consumed in industrial quantities — but we made it. The corridor is alive again. The mess is full. The WiFi is overwhelmed. Normalcy has returned.
+      </div>
+      <div class="confetti-strip" style="margin-top:10px">🎊🎉🥳🎊🎉🥳🎊🎉🥳🎊</div>
+    </div>
+
+    <div class="campus-two-col">
+
+      <!-- Comic strip: exam survival -->
+      <div class="campus-comic-strip">
+        <div class="campus-comic-header">🎭 THE SY EXAM EXPERIENCE</div>
+        <div class="campus-comic-panels">
+          <div class="campus-comic-panel light">
+            <div style="display:flex;gap:8px;align-items:center;">
+              <span style="font-size:32px">📚😤</span>
+              <div class="speech-bubble" style="font-size:11px;">3 days before: "I WILL STUDY EVERYTHING. I AM READY."</div>
+            </div>
+          </div>
+          <div class="campus-comic-panel light2">
+            <div style="display:flex;gap:8px;align-items:center;">
+              <span style="font-size:32px">😴📱</span>
+              <div class="speech-bubble" style="font-size:11px;">Night before: *watching YouTube reels at 2AM* "5 more minutes..."</div>
+            </div>
+          </div>
+          <div class="campus-comic-panel light3">
+            <div style="display:flex;gap:8px;align-items:center;">
+              <span style="font-size:32px">😵📝</span>
+              <div class="speech-bubble" style="font-size:11px;">Exam day: "I have never heard of this subject in my life."</div>
+            </div>
+          </div>
+          <div class="campus-comic-panel light" style="background:linear-gradient(135deg,#e0ffe0,#c0ffc0);">
+            <div style="display:flex;gap:8px;align-items:center;">
+              <span style="font-size:32px">🥳🎉</span>
+              <div class="speech-bubble" style="font-size:11px;">After exam: "BHAI WOH QUESTION EXACTLY MUJHE PATA THA BRO!"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Survivor stats -->
+      <div>
+        <div class="survivor-stats">
+          <div class="stat-title"> SY EXAM SURVIVAL METRICS (UNOFFICIAL)</div>
+          <div class="stat-item">
+            <div class="stat-label">Coffee consumed</div>
+            <div class="stat-bar-wrap"><div class="stat-bar-fill" style="width:95%"></div></div>
+            <div class="stat-val">∞ cups</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Hours actually studied</div>
+            <div class="stat-bar-wrap"><div class="stat-bar-fill" style="width:30%;background:linear-gradient(90deg,#ff4400,#ff6600)"></div></div>
+            <div class="stat-val">3.2h</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Memes sent in WhatsApp groups</div>
+            <div class="stat-bar-wrap"><div class="stat-bar-fill" style="width:88%"></div></div>
+            <div class="stat-val">847</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Notes borrowed</div>
+            <div class="stat-bar-wrap"><div class="stat-bar-fill" style="width:72%"></div></div>
+            <div class="stat-val">72%</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Students who "got it" after</div>
+            <div class="stat-bar-wrap"><div class="stat-bar-fill" style="width:99%"></div></div>
+            <div class="stat-val">100%</div>
+          </div>
+        </div>
+
+        <div class="meme-box" style="margin-top:12px;">
+          <div class="meme-box-emoji">😂📖</div>
+          <div class="meme-text">"PADH LIYA MEINE... (last 15 min)"</div>
+          <div class="meme-caption"> EVERY SY STUDENT EVER  VERIFIED</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:15px;background:#001a10;border:1px solid var(--neon);padding:15px;display:flex;justify-content:space-between;align-items:center;">
+      <div>
+        <div style="font-family:'Orbitron',monospace;font-size:11px;color:var(--neon);letter-spacing:2px;margin-bottom:5px;"> NEXT ON THE MMCOE RADAR</div>
+        <div style="font-size:12px;color:#70a080;line-height:1.6;">
+          🔹 Cybersecurity Guest Lecture — <strong style="color:var(--neon)">10 March 2026</strong><br>
+          🔹 Cypher Club CTF Challenge — TBA<br>
+          🔹 Mid-Semester Exams — Looming... (as always)<br>
+          🔹 Technical Fest Planning — Stay tuned!
+        </div>
+      </div>
+      <div style="font-size:60px">📅</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ==================== PAGE 6: JOURNAL / DEEP DIVE ==================== -->
+<div class="page journal-page">
+  <div class="journal-header">
+    <span class="journal-title-section"> GHOST PROTOCOL — TECH DEEP DIVE </span>
+    <span style="font-family:'Orbitron',monospace;font-size:11px;color:#5050ff;letter-spacing:2px;">06 / 07</span>
+  </div>
+
+  <div class="journal-content">
+    <div class="journal-article-title">
+      THE RISE OF AI-POWERED CYBERATTACKS:<br>WHY YOUR ANTIVIRUS IS CRYING ITSELF TO SLEEP
+    </div>
+    <div class="journal-byline"> ANALYSIS BY GHOST | CYPHER CLUB RESEARCH | MARCH 2026 </div>
+
+    <div class="journal-two-col">
+      <div>
+        <div class="journal-body">
+          <p>
+            We are living in the golden age of cyber threats — and not in a good way. Artificial intelligence has officially become the Swiss Army knife of the criminal underground, democratizing hacking to the point where your average script kiddie now has access to tools that would have made APT groups jealous five years ago.
+          </p>
+
+          <div class="pullquote">
+            "The sophistication gap between nation-state actors and cybercriminals is closing at an alarming rate. What took a state-sponsored team six months in 2020 can now be accomplished by a $50/month AI subscription in 2026."
+            <div class="pullquote-attr">— CrowdStrike Global Threat Report, Q1 2026</div>
+          </div>
+
+          <p>
+            <strong>AI-Powered Phishing:</strong> Generative AI tools have made phishing campaigns terrifyingly effective. Attackers now use LLMs to scrape LinkedIn, company websites, and social media to craft hyper-personalized emails that reference real projects, real colleagues, and even mimic writing styles. The result? Click rates on malicious links have reportedly tripled since 2024.
+          </p>
+          <p>
+            <strong>Automated Vulnerability Discovery:</strong> Tools like <em>AI</em> and underground derivatives of major LLMs are being used to automatically scan codebases, identify zero-days, and generate working exploits — all with minimal human input. The cycle from "discovered vulnerability" to "weaponized exploit" has shrunk from weeks to hours.
+          </p>
+          <p>
+            <strong>Deepfake Social Engineering:</strong> The PowerSchool attackers reportedly used a deepfake voice call to impersonate an IT vendor's account manager. Voice cloning, real-time video deepfakes, and AI-generated "trusted faces" are becoming standard tools in the social engineer's arsenal. We're entering an era where "I heard your voice on the call" is no longer enough verification.
+          </p>
+        </div>
+      </div>
+
+      <div class="journal-sidebar">
+        <div class="data-card">
+          <div class="data-card-title"> AI THREAT STATS — Q1 2026</div>
+          <div class="data-row">
+            <div class="data-label">AI phishing increase</div>
+            <div class="data-value red">+340%</div>
+          </div>
+          <div class="data-row">
+            <div class="data-label">Avg exploit dev time</div>
+            <div class="data-value yellow">6 hrs</div>
+          </div>
+          <div class="data-row">
+            <div class="data-label">Deepfake attacks detected</div>
+            <div class="data-value red">+890%</div>
+          </div>
+          <div class="data-row">
+            <div class="data-label">AI-gen malware samples</div>
+            <div class="data-value red">2.7M+</div>
+          </div>
+          <div class="data-row">
+            <div class="data-label">Avg breach cost 2026</div>
+            <div class="data-value yellow">$4.9M</div>
+          </div>
+          <div class="data-row">
+            <div class="data-label">MFA bypass success rate</div>
+            <div class="data-value green">↓ 89%</div>
+          </div>
+        </div>
+
+        <div class="data-card">
+          <div class="data-card-title"> NOTABLE BREACHES TIMELINE</div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">JAN 2026</div>
+              <div class="timeline-text">PowerSchool breach — 50M+ records stolen</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">FEB 2026</div>
+              <div class="timeline-text">DeepSeek database exposed publicly</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">FEB 2026</div>
+              <div class="timeline-text">Salt Typhoon confirmed still in telco networks</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">MAR 2026</div>
+              <div class="timeline-text">Microsoft March Patch Tuesday — 94 CVEs patched</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="data-card" style="background:#001500;border-color:#00ff8830;">
+          <div class="data-card-title" style="color:var(--neon)"> DEFENSE CHECKLIST</div>
+          <div style="font-family:'Share Tech Mono',monospace;font-size:9px;color:#60a070;line-height:2;">
+            ✅ Enable ANTIVIRUS everywhere<br>
+            ✅ Zero Trust network model<br>
+            ✅ AI-powered threat detection<br>
+            ✅ Regular phishing simulations<br>
+            ✅ Patch within 24hrs of CVE<br>
+            ⬜ Assume breach mentality<br>
+            ⬜ Incident response drill (DO IT)
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PAGE 7: BACK PAGE ==================== -->
+<div class="page back-page">
+  <div class="page-header">
+    <span class="page-header-title"> GHOST PROTOCOL — CLUB CORNER & BACK PAGE </span>
+    <span class="page-num">07 / 07</span>
+  </div>
+
+  <div class="back-content">
+    <div class="back-three-col">
+
+      <!-- CTF Box -->
+      <div class="ctf-box">
+        <div class="ctf-title">⚑ CTF CHALLENGE<br><span style="font-size:10px;color:#00ff8880">CAN YOU CRACK IT?</span></div>
+
+        <div class="ctf-challenge">
+          <span class="ctf-pts">50 PTS</span>
+          <strong style="color:var(--yellow)">CHALLENGE 01: "THE MESSAGE"</strong><br>
+          Decode this:<br>
+          <span style="color:#60ff80;font-size:11px">
+          47 48 4f 53 54<br>50 52 4f 54 4f<br>43 4f 4c 20 52<br>55 4c 45 5a
+          </span>
+          <div class="ctf-hint">💡 Hint: Each pair is a hex value</div>
+        </div>
+
+        <div class="ctf-challenge">
+          <span class="ctf-pts">100 PTS</span>
+          <strong style="color:var(--yellow)">CHALLENGE 02: "CAESAR'S LAST POST"</strong><br>
+          <span style="color:#60ff80;font-size:10px">
+          "Ftaol Cbyb Ohvra Kbyh"
+          </span>
+          <div class="ctf-hint">💡 Hint: Julius had a favorite number (13)</div>
+        </div>
+
+        <div style="font-family:'Share Tech Mono',monospace;font-size:9px;color:#00ff8860;margin-top:10px;">
+          Submit answers to Cypher Club<br>through Mail till 13 March!<br>
+          Winners get: Cypher Exclusive Joining Opportunity + internet fame
+        </div>
+      </div>
+
+      <!-- About Cypher Club -->
+      <div class="about-box">
+        <div class="about-logo">⚡ CYPHER CLUB</div>
+        <div class="about-subtitle-text">MMCOE'S CYBERSECURITY COMMUNITY</div>
+        <div class="about-body">
+          Cypher Club is the official cybersecurity community of MMCOE, Pune — dedicated to making students paranoid enough to be safe online. We run CTFs, workshops, awareness drives, and the GHOST PROTOCOL newsletter.
+        </div>
+        <div class="about-body">
+          <strong style="color:var(--neon2)">What we do:</strong><br>
+          🔐 Monthly CTF challenges<br>
+          🎤 Industry guest lectures<br>
+          📰 Ghost Protocol newsletter<br>
+          🛡️ Security awareness workshops<br>
+          💻 Ethical hacking labs
+        </div>
+        <div class="about-link">📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8eedf7fee6ebfcede2fbeccee3e3ede1eba0ebeafba0e7e0">[email&#160;protected]</a></div>
+        <div class="about-link">📍 Room 609, AI-DS Dept, MMCOE</div>
+        <div class="about-link">🌐 instagram: @cypherclub_mmcoe</div>
+      </div>
+
+      <!-- Security Tips -->
+      <div class="tips-box">
+        <div style="font-family:'Orbitron',monospace;font-size:12px;color:var(--yellow);letter-spacing:2px;margin-bottom:15px;">⚡ GHOST'S QUICK TIPS</div>
+        <div class="tip-item">
+          <span class="tip-icon">🔑</span>
+          <div class="tip-text"><strong>USE A STRONG PASSWORD</strong><br>"Rahul123" is not a password. It's a confession.</div>
+        </div>
+        <div class="tip-item">
+          <span class="tip-icon">📱</span>
+          <div class="tip-text"><strong>ENABLE ANTIVIRUS NOW</strong><br>2FA stops 99.9% of automated attacks. That's more effective than any antivirus.</div>
+        </div>
+        <div class="tip-item">
+          <span class="tip-icon">🔗</span>
+          <div class="tip-text"><strong>THINK BEFORE YOU CLICK</strong><br>If an email says "You won ₹50 lakh, click here" — you didn't win ₹50 lakh.</div>
+        </div>
+        <div class="tip-item">
+          <span class="tip-icon">📡</span>
+          <div class="tip-text"><strong>PUBLIC WIFI = PUBLIC DATA</strong><br>Cafeteria WiFi is not for banking. Use a Private Network or suffer the consequences.</div>
+        </div>
+        <div class="tip-item">
+          <span class="tip-icon">🔄</span>
+          <div class="tip-text"><strong>UPDATE EVERYTHING</strong><br>That "remind me tomorrow" button has now clicked itself 847 times.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quote of the issue -->
+    <div style="background:#001520;border:1px solid #00ff8830;padding:20px 30px;margin-bottom:15px;display:flex;justify-content:space-between;align-items:center;gap:30px;animation:contactPulse 2.5s ease-in-out infinite;">
+      <div style="font-size:36px;animation:float 3s ease-in-out infinite;">👻</div>
+      <div style="flex:1;">
+        <div style="font-family:'Orbitron',monospace;font-size:11px;color:var(--neon);letter-spacing:3px;margin-bottom:8px;text-transform:uppercase;">Want to Reach Ghost?</div>
+        <div style="font-size:12px;color:#7090a8;line-height:1.8;">
+          DM me on LinkedIn for collaborations, feedback, or just to talk  tech & cybersec.<br>
+          <span style="color:var(--white);font-family:'Share Tech Mono',monospace;">linkedin.com/in/pruthviraj-s-467937379</span>
+        </div>
+      </div>
+      <div style="width:1px;height:50px;background:var(--border);"></div>
+      <div style="flex:1;">
+        <div style="font-family:'Orbitron',monospace;font-size:11px;color:var(--neon);letter-spacing:3px;margin-bottom:8px;text-transform:uppercase;">WhatsApp for Collabs</div>
+        <div style="font-size:12px;color:#7090a8;line-height:1.8;">
+          Open to collaborations, joint projects, and interesting conversations.I pick call occassionally so whatsapp me ...<br>
+          <span style="color:var(--white);font-family:'Share Tech Mono',monospace;">+91 - 93717 20911</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-of-issue">
+      <div class="qoi-text">
+        "The only truly secure system is one that is powered off, cast in a block of concrete, and sealed in a lead-lined room with armed guards — and even then I have my doubts."
+      </div>
+      <div class="qoi-attr">— GENE SPAFFORD | QUOTE OF THE ISSUE</div>
+    </div>
+
+  </div>
+
+  <div class="back-footer">
+    <div class="footer-logo">⚡ CYPHER CLUB<br><span style="font-size:8px;color:#405060;letter-spacing:1px;">MMCOE — PUNE</span></div>
+    <div class="footer-center">
+      GHOST PROTOCOL • VOLUME 01, ISSUE 01 • MARCH 2026<br>
+      AUTHOR: GHOST | MARATHWADA MITRA MANDAL COLLEGE OF ENGINEERING, PUNE<br>
+      ALL CONTENT IS FOR EDUCATIONAL PURPOSES ONLY.<br>
+      DARE TO FIND US. WE'LL FIND YOU.
+    </div>
+    <div class="footer-right">
+      NEXT ISSUE: APRIL 2026<br>
+      <span style="color:#304050">STAY
